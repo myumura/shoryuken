@@ -64,7 +64,7 @@ module Shoryuken
 
     def start_managers
       @managers.each do |manager|
-        Concurrent::Future.execute { manager.start }
+        executor.post { manager.start }
       end
     end
 
